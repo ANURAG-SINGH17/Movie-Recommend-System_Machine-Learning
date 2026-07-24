@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const IMAGE_BASE = "https://image.tmdb.org/t/p/original";
+const API_URL = import.meta.env.BACKEND_API;
 
 export default function Recommendation() {
   const { title } = useParams();
@@ -23,7 +24,7 @@ export default function Recommendation() {
       setLoading(true);
 
       const res = await axios.get(
-        `http://127.0.0.1:8000/recommend/${decodedTitle}`
+        `${API_URL}/recommend/${decodedTitle}`
       );
 
       setMovie(res.data.query_movie);

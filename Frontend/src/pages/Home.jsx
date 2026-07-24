@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const IMAGE_BASE = "https://image.tmdb.org/t/p/original";
+const API_URL = import.meta.env.BACKEND_API;
 
 
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
 
   const fetchPopular = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:8000/get-top-movies");
+      const res = await axios.get(`${API_URL}/get-top-movies`);
       setMovies(res.data);
 
       // top movie for hero section
