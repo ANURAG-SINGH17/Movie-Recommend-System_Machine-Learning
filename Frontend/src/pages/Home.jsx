@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const IMAGE_BASE = "https://image.tmdb.org/t/p/original";
-const API_URL = import.meta.env.BACKEND_API;
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 
 export default function Home() {
